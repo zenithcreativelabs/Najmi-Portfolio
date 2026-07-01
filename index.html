@@ -531,6 +531,140 @@
     .tech-col{ padding: 28px 20px; }
   }
 
+  /* ============ PROJECT FEATURE (Arkwright) ============ */
+  .project-feature{
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .project-feature-header{
+    padding: 48px;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  .project-feature-header h3{
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    margin: 10px 0 14px;
+  }
+  .project-desc{
+    color: var(--ink-dim);
+    font-size: 1rem;
+    max-width: 58ch;
+    line-height: 1.7;
+  }
+  .project-links{ margin-top: 28px; }
+
+  .project-screens{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+  .project-screen-card{
+    padding: 0;
+    border-right: 1px solid var(--line);
+  }
+  .project-screen-card:last-child{ border-right: none; }
+  .screen-label{
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  .screen-img img{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top left;
+    display: block;
+  }
+  .screen-iframe{
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    background: var(--panel);
+  }
+  .screen-iframe iframe{
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: top left;
+    border: none;
+    pointer-events: none;
+  }
+  .iframe-overlay-link{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .project-walkthrough{
+    padding: 40px 48px;
+    background: var(--bg);
+  }
+  .walkthrough-label{ margin-bottom: 28px; }
+  .walkthrough-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+  }
+  .walkthrough-item{
+    padding: 24px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .walkthrough-item:nth-child(3n){ border-right: none; }
+  .walkthrough-item:nth-child(n+4){ border-bottom: none; }
+  .walkthrough-num{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--blue-bright);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .walkthrough-item h4{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  .walkthrough-item p{
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+    line-height: 1.55;
+  }
+
+  .tech-stack-bar{
+    margin-top: 32px;
+    padding: 28px 32px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+  }
+
+  @media (max-width: 860px){
+    .project-feature-header{ padding: 32px 24px; }
+    .project-screens{ grid-template-columns: 1fr; }
+    .project-screen-card{ border-right: none; border-bottom: 1px solid var(--line); }
+    .project-screen-card:last-child{ border-bottom: none; }
+    .walkthrough-grid{ grid-template-columns: repeat(2,1fr); }
+    .walkthrough-item:nth-child(3n){ border-right: 1px solid var(--line); }
+    .walkthrough-item:nth-child(2n){ border-right: none; }
+    .walkthrough-item:nth-child(n+4){ border-bottom: 1px solid var(--line); }
+    .walkthrough-item:nth-child(n+5){ border-bottom: none; }
+    .project-walkthrough{ padding: 32px 24px; }
+  }
+  @media (max-width: 480px){
+    .project-feature-header{ padding: 24px 20px; }
+    .walkthrough-grid{ grid-template-columns: 1fr; }
+    .walkthrough-item{ border-right: none !important; border-bottom: 1px solid var(--line) !important; }
+    .walkthrough-item:last-child{ border-bottom: none !important; }
+    .project-walkthrough{ padding: 24px 20px; }
+    .tech-stack-bar{ padding: 24px 20px; }
+  }
+
   /* ============ LEADERSHIP / ZENITH ============ */
   .leadership{ background: var(--bg); }
   .lead-layout{
@@ -896,6 +1030,16 @@
         </div>
         <span class="work-card-tag">Photoshoot</span>
       </div>
+      <div class="work-card">
+        <div class="img-slot">
+          <img src="assets/photography/event-3.jpg" alt="Event photography" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5L5 19"/></svg>
+            <span class="slot-label">assets/photography/event-3.jpg</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Events</span>
+      </div>
     </div>
 
     <div class="work-grid" id="videoGrid" data-hidden="true">
@@ -972,53 +1116,109 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div>
-        <span class="eyebrow">02 — Technical</span>
-        <h2>The same precision, applied to data and to code.</h2>
+        <span class="eyebrow">02 — Web Development</span>
+        <h2>Building sites and web apps that actually work.</h2>
       </div>
-      <p>BBA in Management Information Systems, Universiti Malaya. I build what businesses run on and read what their numbers say.</p>
+      <p>BBA in Management Information Systems, Universiti Malaya. I design and build production-ready websites from scratch using HTML, CSS, and Java.</p>
     </div>
 
-    <div class="tech-grid reveal">
-      <div class="tech-col">
-        <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19V5a2 2 0 012-2h8.5L20 7.5V19a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 3v4.5H18.5"/><path d="M8 13h8M8 17h5"/></svg>
-        <h3>Data Analysis</h3>
-        <p>Turning operational and marketing data into something a business can act on — from a spreadsheet model to a SQL query to a Python script.</p>
-        <div class="stack-row">
-          <span class="stack-pill">MS Excel</span>
-          <span class="stack-pill">Python</span>
-          <span class="stack-pill">SQL</span>
-        </div>
-        <div class="tech-project">
-          <div class="tech-project-slot img-slot">
-            <img src="assets/technical/data-project-1.jpg" alt="Data analysis project" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="img-placeholder">
-              <span class="slot-label">assets/technical/data-project-1.jpg</span>
-            </div>
+    <!-- Arkwright featured project -->
+    <div class="project-feature reveal">
+      <div class="project-feature-header">
+        <div class="project-feature-meta">
+          <span class="eyebrow">Featured project</span>
+          <h3>Arkwright Studio</h3>
+          <p class="project-desc">A full website built for a fictional architecture firm — Arkwright Studio, est. 1998, Kuala Lumpur. Designed and coded from scratch: hero section, scrolling marquee, project showcase with phase breakdowns, testimonials, and a contact form. Deployed live on Vercel.</p>
+          <div class="stack-row" style="margin-top:18px;">
+            <span class="stack-pill">HTML</span>
+            <span class="stack-pill">CSS</span>
+            <span class="stack-pill">JavaScript</span>
+            <span class="stack-pill">Vercel</span>
           </div>
-          <h4>Project name</h4>
-          <span>Add a short outcome — e.g. "Built a sales dashboard that cut weekly reporting time by 60%."</span>
+          <div class="project-links">
+            <a href="https://arkwright-firm.vercel.app/" target="_blank" rel="noopener" class="btn btn-solid">View live site ↗</a>
+          </div>
         </div>
       </div>
 
-      <div class="tech-col">
-        <svg class="tech-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg>
-        <h3>Web Development</h3>
-        <p>Websites and web apps for small and mid-sized businesses — built to load fast, read clean, and actually get maintained after launch.</p>
-        <div class="stack-row">
-          <span class="stack-pill">HTML</span>
-          <span class="stack-pill">CSS</span>
-          <span class="stack-pill">Java</span>
+      <!-- Two-pane: code screenshot + site preview iframe -->
+      <div class="project-screens">
+        <div class="project-screen-card">
+          <div class="screen-label eyebrow">Source code</div>
+          <div class="screen-img">
+            <img src="assets/technical/arkwright-code.png" alt="Arkwright site source code on GitHub">
+          </div>
         </div>
-        <div class="tech-project">
-          <div class="tech-project-slot img-slot">
-            <img src="assets/technical/web-project-1.jpg" alt="Web development project" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="img-placeholder">
-              <span class="slot-label">assets/technical/web-project-1.jpg</span>
+        <div class="project-screen-card">
+          <div class="screen-label eyebrow">Live site preview</div>
+          <div class="screen-iframe">
+            <iframe src="https://arkwright-firm.vercel.app/" title="Arkwright Studio live site" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+            <a href="https://arkwright-firm.vercel.app/" target="_blank" rel="noopener" class="iframe-overlay-link" aria-label="Open Arkwright Studio site in new tab"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Site walkthrough: key sections -->
+      <div class="project-walkthrough">
+        <div class="walkthrough-label">
+          <span class="eyebrow">Site walkthrough</span>
+        </div>
+        <div class="walkthrough-grid">
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">01</span>
+            <div>
+              <h4>Hero</h4>
+              <p>Full-bleed hero with scrolling marquee ticker, live availability status, and dual CTA.</p>
             </div>
           </div>
-          <h4>Project name</h4>
-          <span>Add a short outcome — e.g. "Designed and built a booking site for a local florist."</span>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">02</span>
+            <div>
+              <h4>Studio</h4>
+              <p>About section with firm history, studio stats (248 projects, 27 countries, 26 years) and philosophy copy.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">03</span>
+            <div>
+              <h4>Selected Work</h4>
+              <p>Three featured projects with phase-by-phase build breakdowns — Blueprint, Sketch, Build, Final.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">04</span>
+            <div>
+              <h4>Process</h4>
+              <p>Four-phase methodology section explaining the studio's design and construction workflow.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">05</span>
+            <div>
+              <h4>Testimonials</h4>
+              <p>Client quotes from Meridian Group and Aurum Properties with attribution and role.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">06</span>
+            <div>
+              <h4>Contact</h4>
+              <p>Project enquiry form with category select, studio address, email, and commission availability.</p>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Stack summary bar -->
+    <div class="tech-stack-bar reveal">
+      <span class="eyebrow" style="color:var(--ink-dim);">Also comfortable with</span>
+      <div class="stack-row" style="margin-top:14px;">
+        <span class="stack-pill">MS Excel</span>
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">SQL</span>
+        <span class="stack-pill">Java</span>
+        <span class="stack-pill">Data Analysis</span>
       </div>
     </div>
   </div>
